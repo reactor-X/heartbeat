@@ -4,6 +4,7 @@ var UserSchema = mongoose.Schema({
     lname: String,
     email: String,
     password:String,
+    username:String,
 });
 
 UserSchema.methods.setName=function(fname,lname){
@@ -14,6 +15,15 @@ UserSchema.methods.setName=function(fname,lname){
 UserSchema.methods.getName=function(){
 	return this.fname+" "+this.lname;
 };
+
+UserSchema.methods.getUsername=function(){
+	return this.username;
+};
+
+UserSchema.methods.setUsername=function(username){
+	this.username=username;
+};
+
 
 UserSchema.methods.getFname=function(){
 	return this.fname;

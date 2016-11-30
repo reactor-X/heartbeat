@@ -19,3 +19,8 @@ body{
 	font-size:small;
 	margin-left:5%;
 }
+.error{
+	color:#ff5252;
+	text-align: center;
+	margin-left:23%;
+}
