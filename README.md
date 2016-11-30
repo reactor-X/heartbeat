@@ -1,2 +1,2 @@
-# heartbeat
+# HeartBeat
 Realtime device monitor.
