@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/heartbeat_components.css' />
+  </head>
+  <body>
+  <div class='container'>
+  	<div class='row'>
+  		<div class='col-md-12'>
+  				<div class='center-form col-md-3'>
+  					<h1><%= title %></h1>&nbsp;&nbsp;<i class='fa fa-desktop fa-2x'  style='color:grey;'></i>	&nbsp;&nbsp;
+  					<i class='fa fa-heartbeat fa-5x'  style='color:#ff5252;'></i>&nbsp;&nbsp;&nbsp;&nbsp;
+    				<i class='fa fa-mobile fa-2x'  style='color:grey;'></i>
+            <p class='label'>Realtime device diagnostics</p>
+    			</div>
+
+        <div class='center-form col-md-4'>
+  				<form action='/' method='POST'>
+        			<label for="inputEmail" class="sr-only">Email address</label>
+        			<input id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" type="email">
+        			<label for="inputPassword" class="sr-only">Password</label>
+        			<input id="inputPassword" class="form-control" placeholder="Password" required="" type="password">
+        			<div class="checkbox">
+          				<label>
+            				<input value="remember-me" type="checkbox"> Remember me
+          				</label>
+        			</div>
+        			<button class="btn btn-md btn-primary btn-block" style='background-color:#1e88e5;' type="submit">Sign in</button>
+      			</form>
+      	</div>
+  		</div>
+    </div>
+   </div>
+  </body>
+</html>

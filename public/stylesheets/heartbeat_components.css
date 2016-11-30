@@ -1,0 +1,21 @@
+body{
+	background-color:#F8F8FF;	
+}
+
+.center-form
+{
+	left:20%;
+	top:120px;
+}
+.form-control
+{
+	margin-top:8px;
+}
+
+.checkbox{
+	margin-top:8px;
+}
+.label{
+	font-size:small;
+	margin-left:5%;
+}
