@@ -4,11 +4,18 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var session=require('client-sessions');
 var index = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
+
+//Include mozilla's client sessions library.
+app.use(session({
+  cookieName: 'session',
+  secret: 'i!gP&3ibF}Qx<)+V(ZiY$&nXY)R&AUj@dQEz47M?<FU[&21jtL[GQ.Kzm-.n%=C',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

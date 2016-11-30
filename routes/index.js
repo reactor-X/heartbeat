@@ -8,7 +8,13 @@ var db=appContainer.services.database;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'HeartBeat',message: ''});
+	console.log(req.user);
+  if (req.session && req.session.user){
+	 	res.render('dashboard',{username:req.session.user.username,fname:req.session.user.fname,name:req.session.user.fname+ " " +req.session.user.lname});
+  }
+  else {
+	 	res.render('index', { title: 'HeartBeat',message: ''});
+  }
 });
 
 //User login
@@ -26,6 +32,7 @@ router.post('/', function(req, res, next) {
 	 		 	res.render('index', { title: 'HeartBeat',message: 'Invalid Username or password.'});
 	 		 }
 	 		 else {
+	 		 	req.session.user=user;
 	 		 	res.render('dashboard',{username:user.username,fname:user.fname,name:user.fname+ " " +user.lname});
 	 		}
 	 	}
@@ -45,5 +52,11 @@ router.post('/signup', function(req, res, next) {
     db.connection.close();	
 
   });
+
+router.get('/logout',function (req,res,next){
+	delete req.user;
+	req.session.reset();
+	res.redirect('/');
+});
 module.exports = router;
 
