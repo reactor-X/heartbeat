@@ -4,8 +4,9 @@ var appContainer = require('../config/app_container.js');
 var db = appContainer.services.database;
 var isLoggedIn = appContainer.services.authentication.isLoggedIn;
 var appMessages = appContainer.config.string_table;
+var operatingSystem = require('../services/os/operating_system.js');
+var ubuntu_terminal=operatingSystem.terminal.ubuntu;
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
     if (isLoggedIn(req.session)) {
         res.redirect('/dashboard');
@@ -50,14 +51,17 @@ router.post('/', function(req, res, next) {
     });
 });
 
-/* GET dashboard */
+/* GET dashboard echo "ragingblast" | sudo -S apt-get upgrade*/
 router.get('/dashboard', function(req, res, next) {
     if (isLoggedIn(req.session)) {
-        res.render('dashboard', {
+        ubuntu_terminal.executeCommand('lsb_release -a',function (error,stderror,stdout){
+            res.render('dashboard', {
             username: req.session.user.username,
             fname: req.session.user.fname,
-            name: req.session.user.fname + " " + req.session.user.lname
+            name: req.session.user.fname + " " + req.session.user.lname,
+            server_information: stderror!==null?stdout.replace(/\n/g,'<br>'):stdout.replace(/\n/g,'<br>'),
         });
+    });  
     } else {
         res.redirect('/');
     }
@@ -87,4 +91,8 @@ router.get('/logout', function(req, res, next) {
     req.session.reset();
     res.redirect('/');
 });
+
+// router.post('/commander',function (req,res,next){
+    
+// });
 module.exports = router;

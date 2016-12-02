@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('heartbeat:server');
 var http = require('http');
+var commander=require('../services/commander/commander');
 /**
  * Get port from environment and store in Express.
  */
@@ -24,7 +25,11 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+//Listen event on the socket (Prepare socket events for monitoring)
+var io = require('socket.io').listen(server.listen(port));
+commander.initializeSocketEvents(io);
+
+
 server.on('error', onError);
 server.on('listening', onListening);
 
