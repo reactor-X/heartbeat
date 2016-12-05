@@ -6,7 +6,6 @@ var isLoggedIn = appContainer.services.authentication.isLoggedIn;
 var appMessages = appContainer.config.string_table;
 var operatingSystem = require('../services/os/operating_system.js');
 var ubuntu_terminal=operatingSystem.terminal.ubuntu;
-
 router.get('/', function(req, res, next) {
     if (isLoggedIn(req.session)) {
         res.redirect('/dashboard');
@@ -43,7 +42,7 @@ router.post('/', function(req, res, next) {
                     req.session.message = appMessages.error.invalid_credentials;
                     res.redirect('/');
                 } else {
-                    req.session.user = user;
+                    req.session.user={'fname':user.fname,'lname':user.lname,'username':user.username,};
                     res.redirect('/dashboard');
                 }
             }

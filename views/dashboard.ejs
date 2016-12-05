@@ -1207,25 +1207,6 @@ gauge.maxValue = 6000;
 gauge.animationSpeed = 32;
 gauge.set(3200);
 gauge.setTextField(document.getElementById("gauge-text"));
-
-  var socket_events;
-  var socket = io('http://localhost:3000');
-
-  socket.on('get_host_info',function(data){
-    console.log(data);alert(';sadsa');
-  });
-  socket.on('connection', function (data) {
-      if (data.status==true){
-        console.log('Connected');
-      }
-  });
-
-socket.on('get_host_info',function(data){
-    console.log(data);
-    alert('sadsa');
-  });
-
-socket.emit('ask_host_info',{data:''});
 </script>
 <!-- /gauge.js -->
 </body>

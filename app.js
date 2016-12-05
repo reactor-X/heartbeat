@@ -8,13 +8,13 @@ var session=require('client-sessions');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-
+var config=require('./config/app_container').config;
 //Include mozilla's client sessions library.
 app.use(session({
   cookieName: 'session',
-  secret: 'i!gP&3ibF}Qx<)+V(ZiY$&nXY)R&AUj@dQEz47M?<FU[&21jtL[GQ.Kzm-.n%=C',
-  duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000,
+  secret: config.session.secret,
+  duration: config.session.duration,
+  activeDuration: config.session.activeDuration,
 }));
 
 // view engine setup
