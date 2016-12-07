@@ -27,3 +27,8 @@ body{
 .main-header{
 	background-color:#BDC3CF;
 }
+
+.live-terminal{
+	width:100%;
+	overflow-y: scroll;
+}

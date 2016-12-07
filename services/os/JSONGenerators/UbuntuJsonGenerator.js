@@ -1,6 +1,4 @@
 var supported_commands=require('../ubuntu').commands;
-var supported_commands=require('../ubuntu').commands;
-console.log(supported_commands);
 var UbuntuJsonGenerator={
 	/*
 	* Generates command output formatted into streams. Standardized JSON is generated later.
@@ -12,6 +10,11 @@ var UbuntuJsonGenerator={
 			response.status='-1';
 			response.message='Unsupported/Invalid Command'; 
 			return response;
+		}
+		else {
+			// switch (supported_commands[command]){
+			// 	case 'lsb_release -a' :
+			// }
 		}
 	}
 }

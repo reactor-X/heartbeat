@@ -5,6 +5,7 @@ var db = appContainer.services.database;
 var isLoggedIn = appContainer.services.authentication.isLoggedIn;
 var appMessages = appContainer.config.string_table;
 var operatingSystem = require('../services/os/operating_system.js');
+ss;l;
 var ubuntu_terminal=operatingSystem.terminal.ubuntu;
 router.get('/', function(req, res, next) {
     if (isLoggedIn(req.session)) {
@@ -60,7 +61,7 @@ router.get('/dashboard', function(req, res, next) {
             name: req.session.user.fname + " " + req.session.user.lname,
             server_information: stderror!==null?stdout.replace(/\n/g,'<br>'):stdout.replace(/\n/g,'<br>'),
         });
-    });  
+    });
     } else {
         res.redirect('/');
     }
@@ -92,6 +93,6 @@ router.get('/logout', function(req, res, next) {
 });
 
 // router.post('/commander',function (req,res,next){
-    
+
 // });
 module.exports = router;
