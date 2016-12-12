@@ -1,8 +1,8 @@
 {
-  "name": "ts-express-angular2-node-boilerplate",
+  "name": "mean2",
   "version": "1.0.2",
-  "description": "Light-weight startup boilerplate for angular2 with typescript and expressjs",
-  "repository": "https://github.com/tngan/ts-express-angular2-node-boilerplate.git",
+  "description": "",
+  "repository": "",
   "author": "tngan",
   "license": "MIT",
   "keywords": [
@@ -17,9 +17,10 @@
     "dev": "concurrently \"npm run tsc:w\" \"npm start\" ",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "nodemon ./server/bin/www",
+    "start": "pm2 start ./server/bin/www -i 0 &",
     "typings": "typings",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "stop": "pm2 stop all"
   },
   "dependencies": {
     "@angular/common": "2.3.0",

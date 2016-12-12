@@ -1,6 +1,5 @@
 //An example configuration, you can modify as you see fit.
 //(Implementation to load this file or the file format may change in future.)
-
 // //Set the universally accessible configuration parameters here.
 // let string_table = require('./string_table');
 //
@@ -29,3 +28,4 @@
 // 						'authentication': authentication
 // 					};
 // };
+//# sourceMappingURL=AppContainer.js.map

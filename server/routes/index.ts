@@ -5,8 +5,10 @@ import * as express from 'express';
 let router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.sendfile('./public/index.html');
+router.get('/api/dashboard_host_info', function(req, res, next) {
+  res.writeHead(200);
+  res.write(JSON.stringify(['Ubuntu 14.04']));
+  res.end();
 });
 
 export = router;
