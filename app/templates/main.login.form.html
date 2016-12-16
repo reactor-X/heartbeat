@@ -1,0 +1,28 @@
+<!-- Main login form loaded during home access -->
+<div class='home-login-form-container' [@fadeInOut]="stateExpression">
+      <div class='row'>
+        <div class='col-md-9 col-md-9 col-sm-9 col-xs-9 <col-lg-9>'>
+          <div class='center-form col-md-4 col-sm-3 col-xs-3 col-lg-3'>
+            <h1>HeartBe<i class='fa fa-heartbeat'></i>t</h1>&nbsp;&nbsp;<i class='fa fa-desktop fa-2x'  style='color:grey;'></i> &nbsp;&nbsp;
+            <i class='fa fa-heartbeat fa-5x'  style='color:#e57373;'></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class='fa fa-mobile fa-2x'  style='color:grey;'></i>
+            <p class='label'>Realtime device diagnostics</p>
+          </div>
+          <div class='center-form col-md-4 col-sm-4 col-xs-4 col-lg-4'>
+            <form [formGroup]="loginForm" (ngSubmit)="save(loginForm.value,loginForm.valid)">
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input formControlName="username" name="username" class="form-control" placeholder="Email address or Username" required autofocus="" >
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input formControlName="password" name="password" class="form-control" placeholder="Password" required="" type="password">
+              <div class="checkbox">
+                <label>
+                  <input value="remember-me" name="remember" type="checkbox"> Remember me
+                </label>
+              </div>
+              <button class="btn btn-md btn-primary btn-block" style='background-color:#1e88e5;' type="submit">Sign in</button>
+              <label class="label error"><%= message %></label>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>

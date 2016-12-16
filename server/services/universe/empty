@@ -1,0 +1,8 @@
+/*
+
+You can keep your services here. Universe can include services common to entire app or multiple routes/problem domains.
+Services unique to a specific route or module can go into separate directories.
+
+You can bootstrap these services using configuration or directly include them into routes. However, first approach will give more control.
+e.g Universe->Authentication->* Universe->Session->* etc.
+*/
